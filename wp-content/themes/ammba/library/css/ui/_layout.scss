@@ -1,0 +1,177 @@
+/*------------------------------------*\
+    Layout
+\*------------------------------------*/
+
+
+.layout-width, .device-padding {
+	padding-left: $spacer/4;
+	padding-right: $spacer/4;
+}
+
+.row {
+	padding-top: $spacer/2;
+	padding-bottom: $spacer/2;
+}
+
+.container {
+	overflow-x: hidden; 
+}
+
+
+/* Grids */
+
+.grid--content--right{
+    > .grid__item{
+        text-align:right;
+    }
+}
+
+.grid--content--center{
+    > .grid__item{
+        text-align:left;
+    }
+}
+
+
+
+/**********************************************************************************************************************************************************
+***  Palm
+**********************************************************************************************************************************************************/
+
+@include media-query(palm) {
+
+
+
+}/* End Palm */
+
+
+/**********************************************************************************************************************************************************
+***  Lap and up
+**********************************************************************************************************************************************************/
+	
+
+@include media-query(lap-and-up) {
+
+	.row {
+		padding-top: $spacer;
+		padding-bottom: $spacer;
+	}
+
+    .small-block {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+
+}/* End Lap & Up */
+
+
+/**********************************************************************************************************************************************************
+***  Lap
+**********************************************************************************************************************************************************/
+
+
+@include media-query(lap) {
+
+	.layout-width, .device-padding {
+		padding-left: $spacer/2;
+		padding-right: $spacer/2;
+	}
+
+
+
+}/* End Lap */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk
+**********************************************************************************************************************************************************/
+
+@include media-query(desk) {
+
+	.layout-width, .device-padding {
+		padding-left: $spacer/1.333;
+		padding-right: $spacer/1.333;
+		&.large-padding {
+			padding-left: $spacer*3;
+			padding-right: $spacer*3;
+		}
+		&.space-left {
+			padding-left: $spacer*2;
+		}
+		&.space-right {
+			padding-right: $spacer*2;
+		}
+	}
+
+	.large-padding {
+		padding-left: $spacer*3;
+		padding-right: $spacer*3;
+	}
+	.space-left {
+		padding-left: $spacer*2;
+	}
+	.space-right {
+		padding-right: $spacer*2;
+	}
+
+
+	.row {
+		padding-top: $spacer*1.5;
+		padding-bottom: $spacer*1.5;
+	}
+
+	.panel-container {
+		padding-left: 100px;
+	}
+
+	.grid__item.large-left-gutter {
+		padding-left: $spacer*4;
+	}
+
+	.module-container {
+		padding-left: $spacer*3;
+	}
+
+
+
+}/* End Desk */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk Wide (1440px & Above)
+**********************************************************************************************************************************************************/
+
+@include media-query(desk-wide) {
+
+	.layout-width {
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+
+	.device-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.row {
+		padding-top: $spacer*2;
+		padding-bottom: $spacer*2;
+	}
+
+	.module-container {
+		padding-left: 20%;
+	}
+
+    .small-block {
+        width: 50%;
+    }
+
+
+}/* End Desk */
+
+
+

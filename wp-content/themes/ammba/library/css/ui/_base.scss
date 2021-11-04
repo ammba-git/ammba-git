@@ -1,0 +1,231 @@
+/*------------------------------------*\
+    Base
+\*------------------------------------*/
+
+
+
+// Helpers
+
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.hide-palm {
+	display: none;
+}
+
+.hide-desk {
+	display: block;
+}
+
+.palm-center {
+	text-align: center; 
+}
+
+// Default Spacers & Margins
+
+$spacer: 40px;
+
+.margin-bottom {
+	margin-bottom: $spacer;
+}
+
+.margin-top {
+	margin-top: $spacer;
+}
+
+// Borders
+.border-bottom {
+	border-bottom: 1px solid $secondary;
+}
+
+hr {
+	border: none;	
+	border-bottom: 1px solid $black-20;
+	&.push-top {
+		margin-top: $spacer;
+	}
+	&.push-bottom {
+		margin-bottom: $spacer;
+	}
+	&.push-both {
+		margin-top: $spacer;
+		margin-bottom: $spacer;
+	}
+}
+
+// Text Shadow
+@mixin text-shadow($blur:10px, $opacity:0.4) {
+	text-shadow: 0 0 $blur rgba(0, 0, 0, $opacity);
+}
+
+// Rounded Corners
+@mixin rounded ($radius: 5px) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-khtml-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Shadow Bar
+@mixin shadow($height: 30px, $opacity: 0.8) {
+	display: block;
+	content: '';
+	width: 100%;
+	height: $height;
+	//z-index: 10;
+	background: -moz-linear-gradient(top,  rgba(0,0,0,$opacity) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,$opacity)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
+}
+
+@mixin shadow-bottom($height: 30px, $opacity: 0.8) {
+	display: block;
+	content: '';
+	width: 100%;
+	height: $height;
+	//z-index: 10;
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,$opacity) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,$opacity)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+}
+
+// Plain List
+.clear-list {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	li {
+		list-style: none;
+	}
+}
+
+// Bulleted List
+.bullet-list {
+	li {
+		list-style: square;
+	}
+	strong {
+		color: $primary;
+	}
+}
+
+// Inline Block
+.ib {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+
+// CSS Transitions
+@mixin ease($ms: 250ms) {
+-webkit-transition: all $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+   -moz-transition: all $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+     -o-transition: all $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        transition: all $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+
+@mixin ease-bg($ms: 250ms) {
+-webkit-transition: background $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+   -moz-transition: background $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+     -o-transition: background $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        transition: background $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+
+@mixin ease-opacity($ms: 250ms) {
+-webkit-transition: opacity $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+   -moz-transition: opacity $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+     -o-transition: opacity $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        transition: opacity $ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+
+@mixin rotate($rotate: 5deg) {
+	-moz-transform: rotate($rotate);
+	-webkit-transform: rotate($rotate);
+	-o-transform: rotate($rotate);
+	-ms-transform: rotate($rotate);
+	transform: rotate($rotate);
+}
+
+
+
+/**********************************************************************************************************************************************************
+***  Palm
+**********************************************************************************************************************************************************/
+
+@include media-query(palm) {
+
+
+
+}/* End Palm */
+
+
+/**********************************************************************************************************************************************************
+***  Lap and up
+**********************************************************************************************************************************************************/
+
+
+@include media-query(lap-and-up) {
+
+.hide-palm {
+	display: block;
+}
+
+.hide-desk {
+	display: none;
+}
+
+.palm-center {
+	text-align: left; 
+}
+
+}/* End Lap & Up */
+
+
+/**********************************************************************************************************************************************************
+***  Lap
+**********************************************************************************************************************************************************/
+
+
+@include media-query(lap) {
+
+}/* End Lap */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk
+**********************************************************************************************************************************************************/
+
+@include media-query(desk) {
+
+
+
+}/* End Desk */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk Wide
+**********************************************************************************************************************************************************/
+
+@include media-query(desk-wide) {
+
+
+
+}/* End Desk */

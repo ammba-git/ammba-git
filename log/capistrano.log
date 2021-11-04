@@ -1,0 +1,952 @@
+# Logfile created on 2017-01-04 16:31:56 +0000 by logger.rb/41954
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 16:31:56 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b6b5f5fa] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [b6b5f5fa] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b6b5f5fa] Finished in 1.397 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [6e6c4584] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [6e6c4584] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [6e6c4584] Finished in 0.257 seconds with exit status 0 (successful).
+  INFO [facf40a9] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [facf40a9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [facf40a9] 	de1c75f1d1f9406a26cb3e9862941c48433d93a7	refs/heads/master
+ad96ef6b5f548212f127a88782fdd1c201daa19e	refs/heads/newrepo
+  INFO [facf40a9] Finished in 0.698 seconds with exit status 0 (successful).
+  INFO [6b7182d2] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [6b7182d2] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [6b7182d2] Finished in 0.372 seconds with exit status 0 (successful).
+  INFO [8b788195] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [8b788195] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [8b788195] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [e73ce703] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [e73ce703] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [e73ce703] Finished in 0.138 seconds with exit status 1 (failed).
+ DEBUG [b22e814c] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [b22e814c] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [b22e814c] Finished in 0.341 seconds with exit status 1 (failed).
+ DEBUG [de1a0499] Running if test ! -d /var/www/html; then echo "Directory does not exist '/var/www/html'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [de1a0499] Command: if test ! -d /var/www/html; then echo "Directory does not exist '/var/www/html'" 1>&2; false; fi
+ DEBUG [de1a0499] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [5ba9a82b] Running /usr/bin/env git clone --mirror https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git /var/www/html/repo as root@188.166.4.171
+ DEBUG [5ba9a82b] Command: cd /var/www/html && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git clone --mirror https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git /var/www/html/repo )
+ DEBUG [5ba9a82b] 	Cloning into bare repository '/var/www/html/repo'...
+  INFO [5ba9a82b] Finished in 2.675 seconds with exit status 0 (successful).
+ DEBUG [0ef439ae] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [0ef439ae] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [0ef439ae] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [76aa93b7] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [76aa93b7] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [76aa93b7] 	Fetching origin
+  INFO [76aa93b7] Finished in 0.876 seconds with exit status 0 (successful).
+ DEBUG [cbae40c7] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [cbae40c7] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [cbae40c7] Finished in 0.556 seconds with exit status 0 (successful).
+  INFO [56aeac04] Running /usr/bin/env mkdir -p /var/www/html/releases/20170104163159 as root@188.166.4.171
+ DEBUG [56aeac04] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170104163159 )
+  INFO [56aeac04] Finished in 1.599 seconds with exit status 0 (successful).
+  INFO [3c312a43] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170104163159 as root@188.166.4.171
+ DEBUG [3c312a43] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170104163159 )
+  INFO [3c312a43] Finished in 0.996 seconds with exit status 0 (successful).
+ DEBUG [e36ee866] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [e36ee866] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [e36ee866] Finished in 0.165 seconds with exit status 0 (successful).
+ DEBUG [b857384a] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [b857384a] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b857384a] 	de1c75f1d1f9406a26cb3e9862941c48433d93a7
+ DEBUG [b857384a] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [42254162] Running if test ! -d /var/www/html/releases/20170104163159; then echo "Directory does not exist '/var/www/html/releases/20170104163159'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [42254162] Command: if test ! -d /var/www/html/releases/20170104163159; then echo "Directory does not exist '/var/www/html/releases/20170104163159'" 1>&2; false; fi
+ DEBUG [42254162] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [f3f96e14] Running /usr/bin/env echo "de1c75f1d1f9406a26cb3e9862941c48433d93a7" >> REVISION as root@188.166.4.171
+ DEBUG [f3f96e14] Command: cd /var/www/html/releases/20170104163159 && /usr/bin/env echo "de1c75f1d1f9406a26cb3e9862941c48433d93a7" >> REVISION
+  INFO [f3f96e14] Finished in 0.338 seconds with exit status 0 (successful).
+  INFO [863430e9] Running /usr/bin/env mkdir -p /var/www/html/releases/20170104163159/wp-content as root@188.166.4.171
+ DEBUG [863430e9] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170104163159/wp-content
+  INFO [863430e9] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [2ef3cc09] Running [ -L /var/www/html/releases/20170104163159/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [2ef3cc09] Command: [ -L /var/www/html/releases/20170104163159/wp-content/uploads ]
+ DEBUG [2ef3cc09] Finished in 0.087 seconds with exit status 1 (failed).
+ DEBUG [03b78a9b] Running [ -d /var/www/html/releases/20170104163159/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [03b78a9b] Command: [ -d /var/www/html/releases/20170104163159/wp-content/uploads ]
+ DEBUG [03b78a9b] Finished in 0.133 seconds with exit status 1 (failed).
+  INFO [624f757d] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170104163159/wp-content/uploads as root@188.166.4.171
+ DEBUG [624f757d] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170104163159/wp-content/uploads
+  INFO [624f757d] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [41e65200] Running /usr/bin/env ln -s /var/www/html/releases/20170104163159 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [41e65200] Command: /usr/bin/env ln -s /var/www/html/releases/20170104163159 /var/www/html/releases/current
+  INFO [41e65200] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [449439ce] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [449439ce] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [449439ce] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [96516f8b] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [96516f8b] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [96516f8b] 	20170104163159
+ DEBUG [96516f8b] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [bed1dc2f] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [bed1dc2f] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [bed1dc2f] Finished in 0.279 seconds with exit status 0 (successful).
+  INFO [4d156832] Running /usr/bin/env echo "Branch master (at de1c75f1d1f9406a26cb3e9862941c48433d93a7) deployed as release 20170104163159 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [4d156832] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at de1c75f1d1f9406a26cb3e9862941c48433d93a7) deployed as release 20170104163159 by leeaplin" >> /var/www/html/revisions.log
+  INFO [4d156832] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 09:58:00 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [985392e4] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [985392e4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [985392e4] Finished in 0.810 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [af1ddb32] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [af1ddb32] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [af1ddb32] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [59878638] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [59878638] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [59878638] 	e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [59878638] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO [c8871695] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [c8871695] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [c8871695] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [332d9d8e] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [332d9d8e] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [332d9d8e] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [81d01706] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [81d01706] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [81d01706] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [6e95069d] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [6e95069d] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [6e95069d] 	de1c75f1d1f9406a26cb3e9862941c48433d93a7
+ DEBUG [6e95069d] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [0418e757] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [0418e757] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [0418e757] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [1a0678bb] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [1a0678bb] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [1a0678bb] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [68712408] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [68712408] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [68712408] 	Fetching origin
+ DEBUG [68712408] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [68712408] 	   de1c75f..e4b1c6e  master     -> master
+ DEBUG [68712408] 	   ad96ef6..9dade59  newrepo    -> newrepo
+ DEBUG [68712408] 	 * [new ref]         refs/keep-around/9dade59bce4de93b29884d84a8a90c2ec2929cb5 -> refs/keep-around/9dade59bce4de93b29884d84a8a90c2ec2929cb5
+ DEBUG [68712408] 	 * [new ref]         refs/keep-around/e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac -> refs/keep-around/e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac
+ DEBUG [68712408] 	 * [new ref]         refs/merge-requests/2/head -> refs/merge-requests/2/head
+  INFO [68712408] Finished in 0.830 seconds with exit status 0 (successful).
+ DEBUG [b9810814] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [b9810814] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [b9810814] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [233cc473] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105095803 as root@188.166.4.171
+ DEBUG [233cc473] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105095803 )
+  INFO [233cc473] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [4973a16a] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105095803 as root@188.166.4.171
+ DEBUG [4973a16a] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105095803 )
+  INFO [4973a16a] Finished in 0.584 seconds with exit status 0 (successful).
+ DEBUG [c54c1814] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [c54c1814] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [c54c1814] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [7d6722a8] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [7d6722a8] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7d6722a8] 	e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac
+ DEBUG [7d6722a8] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [71b339df] Running if test ! -d /var/www/html/releases/20170105095803; then echo "Directory does not exist '/var/www/html/releases/20170105095803'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [71b339df] Command: if test ! -d /var/www/html/releases/20170105095803; then echo "Directory does not exist '/var/www/html/releases/20170105095803'" 1>&2; false; fi
+ DEBUG [71b339df] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [ba6579f5] Running /usr/bin/env echo "e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac" >> REVISION as root@188.166.4.171
+ DEBUG [ba6579f5] Command: cd /var/www/html/releases/20170105095803 && /usr/bin/env echo "e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac" >> REVISION
+  INFO [ba6579f5] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [0a0e4eda] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105095803/wp-content as root@188.166.4.171
+ DEBUG [0a0e4eda] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105095803/wp-content
+  INFO [0a0e4eda] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [9aba42a1] Running [ -L /var/www/html/releases/20170105095803/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [9aba42a1] Command: [ -L /var/www/html/releases/20170105095803/wp-content/uploads ]
+ DEBUG [9aba42a1] Finished in 0.071 seconds with exit status 1 (failed).
+ DEBUG [2af26fda] Running [ -d /var/www/html/releases/20170105095803/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [2af26fda] Command: [ -d /var/www/html/releases/20170105095803/wp-content/uploads ]
+ DEBUG [2af26fda] Finished in 0.071 seconds with exit status 1 (failed).
+  INFO [65afaf8d] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105095803/wp-content/uploads as root@188.166.4.171
+ DEBUG [65afaf8d] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105095803/wp-content/uploads
+  INFO [65afaf8d] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [ca59bd64] Running /usr/bin/env ln -s /var/www/html/releases/20170105095803 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [ca59bd64] Command: /usr/bin/env ln -s /var/www/html/releases/20170105095803 /var/www/html/releases/current
+  INFO [ca59bd64] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [6ed258e0] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [6ed258e0] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [6ed258e0] Finished in 0.078 seconds with exit status 0 (successful).
+ DEBUG [01e2b8fd] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [01e2b8fd] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [01e2b8fd] 	20170104163159	20170105095803
+ DEBUG [01e2b8fd] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [db934061] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [db934061] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [db934061] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [ea19e308] Running /usr/bin/env echo "Branch master (at e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac) deployed as release 20170105095803 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [ea19e308] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac) deployed as release 20170105095803 by leeaplin" >> /var/www/html/revisions.log
+  INFO [ea19e308] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 10:19:26 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3f929f82] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [3f929f82] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3f929f82] Finished in 1.003 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [0034f0e8] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [0034f0e8] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [0034f0e8] Finished in 0.083 seconds with exit status 0 (successful).
+  INFO [d68f0420] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [d68f0420] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [d68f0420] 	8d0f18313ab56d66f86117a3eb505dc9e0896d91	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [d68f0420] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [ce7fc033] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [ce7fc033] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [ce7fc033] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [9944cffe] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [9944cffe] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [9944cffe] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [87b84e57] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [87b84e57] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [87b84e57] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [bb43864d] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [bb43864d] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [bb43864d] 	e4b1c6ec0ef4bb942eaff55ac7a78e3c8d9a43ac
+ DEBUG [bb43864d] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [10fe39e3] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [10fe39e3] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [10fe39e3] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [7f97a70f] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [7f97a70f] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [7f97a70f] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [120f8953] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [120f8953] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [120f8953] 	Fetching origin
+ DEBUG [120f8953] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [120f8953] 	   e4b1c6e..8d0f183  master     -> master
+  INFO [120f8953] Finished in 0.995 seconds with exit status 0 (successful).
+ DEBUG [ad822598] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [ad822598] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [ad822598] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [db9cc32d] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105101931 as root@188.166.4.171
+ DEBUG [db9cc32d] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105101931 )
+  INFO [db9cc32d] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [d782312f] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105101931 as root@188.166.4.171
+ DEBUG [d782312f] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105101931 )
+  INFO [d782312f] Finished in 0.544 seconds with exit status 0 (successful).
+ DEBUG [0386049d] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [0386049d] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [0386049d] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [b603b5ed] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [b603b5ed] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b603b5ed] 	8d0f18313ab56d66f86117a3eb505dc9e0896d91
+ DEBUG [b603b5ed] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [13030945] Running if test ! -d /var/www/html/releases/20170105101931; then echo "Directory does not exist '/var/www/html/releases/20170105101931'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [13030945] Command: if test ! -d /var/www/html/releases/20170105101931; then echo "Directory does not exist '/var/www/html/releases/20170105101931'" 1>&2; false; fi
+ DEBUG [13030945] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [40c49c57] Running /usr/bin/env echo "8d0f18313ab56d66f86117a3eb505dc9e0896d91" >> REVISION as root@188.166.4.171
+ DEBUG [40c49c57] Command: cd /var/www/html/releases/20170105101931 && /usr/bin/env echo "8d0f18313ab56d66f86117a3eb505dc9e0896d91" >> REVISION
+  INFO [40c49c57] Finished in 5.113 seconds with exit status 0 (successful).
+  INFO [4faf8963] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105101931/wp-content as root@188.166.4.171
+ DEBUG [4faf8963] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105101931/wp-content
+  INFO [4faf8963] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [05275e58] Running [ -L /var/www/html/releases/20170105101931/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [05275e58] Command: [ -L /var/www/html/releases/20170105101931/wp-content/uploads ]
+ DEBUG [05275e58] Finished in 0.073 seconds with exit status 1 (failed).
+ DEBUG [b8464bba] Running [ -d /var/www/html/releases/20170105101931/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [b8464bba] Command: [ -d /var/www/html/releases/20170105101931/wp-content/uploads ]
+ DEBUG [b8464bba] Finished in 0.081 seconds with exit status 1 (failed).
+  INFO [bdeded3a] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105101931/wp-content/uploads as root@188.166.4.171
+ DEBUG [bdeded3a] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105101931/wp-content/uploads
+  INFO [bdeded3a] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [2276eae9] Running /usr/bin/env ln -s /var/www/html/releases/20170105101931 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [2276eae9] Command: /usr/bin/env ln -s /var/www/html/releases/20170105101931 /var/www/html/releases/current
+  INFO [2276eae9] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [b4a752e2] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [b4a752e2] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [b4a752e2] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [bbbae325] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [bbbae325] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [bbbae325] 	20170104163159	20170105095803	20170105101931
+ DEBUG [bbbae325] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [1aa7e22b] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [1aa7e22b] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [1aa7e22b] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [ad741730] Running /usr/bin/env echo "Branch master (at 8d0f18313ab56d66f86117a3eb505dc9e0896d91) deployed as release 20170105101931 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [ad741730] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at 8d0f18313ab56d66f86117a3eb505dc9e0896d91) deployed as release 20170105101931 by leeaplin" >> /var/www/html/revisions.log
+  INFO [ad741730] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 10:22:18 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [29d26900] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [29d26900] Command: /usr/bin/env mkdir -p /tmp
+  INFO [29d26900] Finished in 1.153 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [e79f2a53] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [e79f2a53] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [e79f2a53] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [5316190a] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [5316190a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [5316190a] 	d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [5316190a] Finished in 0.526 seconds with exit status 0 (successful).
+  INFO [4de2cb3f] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [4de2cb3f] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [4de2cb3f] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [0b5c5c34] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [0b5c5c34] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [0b5c5c34] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [b94f1b47] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [b94f1b47] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [b94f1b47] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [6a764d28] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [6a764d28] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [6a764d28] 	8d0f18313ab56d66f86117a3eb505dc9e0896d91
+ DEBUG [6a764d28] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [20733951] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [20733951] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [20733951] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [f94fdb47] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [f94fdb47] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [f94fdb47] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [de161b21] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [de161b21] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [de161b21] 	Fetching origin
+ DEBUG [de161b21] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [de161b21] 	   8d0f183..d3e8303  master     -> master
+  INFO [de161b21] Finished in 0.962 seconds with exit status 0 (successful).
+ DEBUG [be572735] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [be572735] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [be572735] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [977b2918] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105102221 as root@188.166.4.171
+ DEBUG [977b2918] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105102221 )
+  INFO [977b2918] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO [fbd98483] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105102221 as root@188.166.4.171
+ DEBUG [fbd98483] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105102221 )
+  INFO [fbd98483] Finished in 1.051 seconds with exit status 0 (successful).
+ DEBUG [f6100d24] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [f6100d24] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [f6100d24] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [fbcdd068] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [fbcdd068] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [fbcdd068] 	d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee
+ DEBUG [fbcdd068] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [da6e658e] Running if test ! -d /var/www/html/releases/20170105102221; then echo "Directory does not exist '/var/www/html/releases/20170105102221'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [da6e658e] Command: if test ! -d /var/www/html/releases/20170105102221; then echo "Directory does not exist '/var/www/html/releases/20170105102221'" 1>&2; false; fi
+ DEBUG [da6e658e] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [99f6d994] Running /usr/bin/env echo "d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee" >> REVISION as root@188.166.4.171
+ DEBUG [99f6d994] Command: cd /var/www/html/releases/20170105102221 && /usr/bin/env echo "d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee" >> REVISION
+  INFO [99f6d994] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [35d3a205] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105102221/wp-content as root@188.166.4.171
+ DEBUG [35d3a205] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105102221/wp-content
+  INFO [35d3a205] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [b0b29a49] Running [ -L /var/www/html/releases/20170105102221/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [b0b29a49] Command: [ -L /var/www/html/releases/20170105102221/wp-content/uploads ]
+ DEBUG [b0b29a49] Finished in 0.072 seconds with exit status 1 (failed).
+ DEBUG [cdec39d2] Running [ -d /var/www/html/releases/20170105102221/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [cdec39d2] Command: [ -d /var/www/html/releases/20170105102221/wp-content/uploads ]
+ DEBUG [cdec39d2] Finished in 0.074 seconds with exit status 1 (failed).
+  INFO [ffb1931f] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105102221/wp-content/uploads as root@188.166.4.171
+ DEBUG [ffb1931f] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105102221/wp-content/uploads
+  INFO [ffb1931f] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [338a8f4a] Running /usr/bin/env ln -s /var/www/html/releases/20170105102221 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [338a8f4a] Command: /usr/bin/env ln -s /var/www/html/releases/20170105102221 /var/www/html/releases/current
+  INFO [338a8f4a] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [4dfe06c2] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [4dfe06c2] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [4dfe06c2] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [bbf8ce02] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [bbf8ce02] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [bbf8ce02] 	20170104163159	20170105095803	20170105101931	20170105102221
+ DEBUG [bbf8ce02] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [31c623db] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [31c623db] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [31c623db] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [c1178811] Running /usr/bin/env echo "Branch master (at d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee) deployed as release 20170105102221 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [c1178811] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee) deployed as release 20170105102221 by leeaplin" >> /var/www/html/revisions.log
+  INFO [c1178811] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 10:27:14 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [975bc803] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [975bc803] Command: /usr/bin/env mkdir -p /tmp
+  INFO [975bc803] Finished in 1.187 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [c20fdf3d] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [c20fdf3d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [c20fdf3d] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [8812e4b7] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [8812e4b7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [8812e4b7] 	089c8f7384ccdc8fe1c60b6203daaa5ad8d25786	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [8812e4b7] Finished in 0.646 seconds with exit status 0 (successful).
+  INFO [453b190f] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [453b190f] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [453b190f] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [ca7446cb] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [ca7446cb] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [ca7446cb] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [6a3edaf1] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [6a3edaf1] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [6a3edaf1] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [930a23f4] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [930a23f4] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [930a23f4] 	d3e83032a6dc08e3dd52c0f6101b8b50c58fc1ee
+ DEBUG [930a23f4] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [8a48ba5b] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [8a48ba5b] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [8a48ba5b] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [448690c8] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [448690c8] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [448690c8] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [5a75f8e6] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [5a75f8e6] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5a75f8e6] 	Fetching origin
+ DEBUG [5a75f8e6] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [5a75f8e6] 	   d3e8303..089c8f7  master     -> master
+  INFO [5a75f8e6] Finished in 1.105 seconds with exit status 0 (successful).
+ DEBUG [915a31f2] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [915a31f2] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [915a31f2] Finished in 0.083 seconds with exit status 0 (successful).
+  INFO [7cbeca42] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105102718 as root@188.166.4.171
+ DEBUG [7cbeca42] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105102718 )
+  INFO [7cbeca42] Finished in 0.082 seconds with exit status 0 (successful).
+  INFO [e4ea9e3d] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105102718 as root@188.166.4.171
+ DEBUG [e4ea9e3d] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105102718 )
+  INFO [e4ea9e3d] Finished in 0.970 seconds with exit status 0 (successful).
+ DEBUG [13c5f58d] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [13c5f58d] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [13c5f58d] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [f8859d2a] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [f8859d2a] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f8859d2a] 	089c8f7384ccdc8fe1c60b6203daaa5ad8d25786
+ DEBUG [f8859d2a] Finished in 0.078 seconds with exit status 0 (successful).
+ DEBUG [203b6e76] Running if test ! -d /var/www/html/releases/20170105102718; then echo "Directory does not exist '/var/www/html/releases/20170105102718'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [203b6e76] Command: if test ! -d /var/www/html/releases/20170105102718; then echo "Directory does not exist '/var/www/html/releases/20170105102718'" 1>&2; false; fi
+ DEBUG [203b6e76] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [b68f9b53] Running /usr/bin/env echo "089c8f7384ccdc8fe1c60b6203daaa5ad8d25786" >> REVISION as root@188.166.4.171
+ DEBUG [b68f9b53] Command: cd /var/www/html/releases/20170105102718 && /usr/bin/env echo "089c8f7384ccdc8fe1c60b6203daaa5ad8d25786" >> REVISION
+  INFO [b68f9b53] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [74483525] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105102718/wp-content as root@188.166.4.171
+ DEBUG [74483525] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105102718/wp-content
+  INFO [74483525] Finished in 0.082 seconds with exit status 0 (successful).
+ DEBUG [7ea67f9f] Running [ -L /var/www/html/releases/20170105102718/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [7ea67f9f] Command: [ -L /var/www/html/releases/20170105102718/wp-content/uploads ]
+ DEBUG [7ea67f9f] Finished in 0.079 seconds with exit status 1 (failed).
+ DEBUG [96d33f0e] Running [ -d /var/www/html/releases/20170105102718/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [96d33f0e] Command: [ -d /var/www/html/releases/20170105102718/wp-content/uploads ]
+ DEBUG [96d33f0e] Finished in 0.081 seconds with exit status 1 (failed).
+  INFO [710f8c34] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105102718/wp-content/uploads as root@188.166.4.171
+ DEBUG [710f8c34] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105102718/wp-content/uploads
+  INFO [710f8c34] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [b46869d9] Running /usr/bin/env ln -s /var/www/html/releases/20170105102718 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [b46869d9] Command: /usr/bin/env ln -s /var/www/html/releases/20170105102718 /var/www/html/releases/current
+  INFO [b46869d9] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [6dffb099] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [6dffb099] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [6dffb099] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [a64fb5bd] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [a64fb5bd] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [a64fb5bd] 	20170104163159	20170105095803	20170105101931	20170105102221	20170105102718
+ DEBUG [a64fb5bd] Finished in 0.082 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 188.166.4.171
+  INFO No old releases (keeping newest 5) on 188.166.4.171
+ DEBUG [0f580b4c] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [0f580b4c] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [0f580b4c] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [71f288f6] Running /usr/bin/env echo "Branch master (at 089c8f7384ccdc8fe1c60b6203daaa5ad8d25786) deployed as release 20170105102718 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [71f288f6] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at 089c8f7384ccdc8fe1c60b6203daaa5ad8d25786) deployed as release 20170105102718 by leeaplin" >> /var/www/html/revisions.log
+  INFO [71f288f6] Finished in 0.080 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 10:56:51 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [941e1078] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [941e1078] Command: /usr/bin/env mkdir -p /tmp
+  INFO [941e1078] Finished in 4.040 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [774aa775] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [774aa775] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [774aa775] Finished in 0.643 seconds with exit status 0 (successful).
+  INFO [bf53830c] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [bf53830c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [bf53830c] 	67f5d0dc48c1bd540ecb3716c270f27bf9b9e795	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [bf53830c] Finished in 0.873 seconds with exit status 0 (successful).
+  INFO [cea3b12c] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [cea3b12c] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [cea3b12c] Finished in 0.612 seconds with exit status 0 (successful).
+  INFO [70e2c17f] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [70e2c17f] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [70e2c17f] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [08d1f258] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [08d1f258] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [08d1f258] Finished in 0.614 seconds with exit status 0 (successful).
+ DEBUG [adb0b0fe] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [adb0b0fe] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [adb0b0fe] 	089c8f7384ccdc8fe1c60b6203daaa5ad8d25786
+ DEBUG [adb0b0fe] Finished in 0.588 seconds with exit status 0 (successful).
+ DEBUG [9f37d356] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [9f37d356] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [9f37d356] Finished in 0.569 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [ff7bdf67] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [ff7bdf67] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [ff7bdf67] Finished in 0.477 seconds with exit status 0 (successful).
+  INFO [d4b8a026] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [d4b8a026] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d4b8a026] 	Fetching origin
+ DEBUG [d4b8a026] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [d4b8a026] 	   089c8f7..67f5d0d  master     -> master
+  INFO [d4b8a026] Finished in 1.231 seconds with exit status 0 (successful).
+ DEBUG [cab8f86d] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [cab8f86d] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [cab8f86d] Finished in 0.613 seconds with exit status 0 (successful).
+  INFO [a5d63961] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105105704 as root@188.166.4.171
+ DEBUG [a5d63961] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105105704 )
+  INFO [a5d63961] Finished in 0.541 seconds with exit status 0 (successful).
+  INFO [d72db3be] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105105704 as root@188.166.4.171
+ DEBUG [d72db3be] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105105704 )
+  INFO [d72db3be] Finished in 1.097 seconds with exit status 0 (successful).
+ DEBUG [990a4d9a] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [990a4d9a] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [990a4d9a] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [69a5ad6c] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [69a5ad6c] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [69a5ad6c] 	67f5d0dc48c1bd540ecb3716c270f27bf9b9e795
+ DEBUG [69a5ad6c] Finished in 0.512 seconds with exit status 0 (successful).
+ DEBUG [fc9a644c] Running if test ! -d /var/www/html/releases/20170105105704; then echo "Directory does not exist '/var/www/html/releases/20170105105704'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [fc9a644c] Command: if test ! -d /var/www/html/releases/20170105105704; then echo "Directory does not exist '/var/www/html/releases/20170105105704'" 1>&2; false; fi
+ DEBUG [fc9a644c] Finished in 1.638 seconds with exit status 0 (successful).
+  INFO [d2b0416a] Running /usr/bin/env echo "67f5d0dc48c1bd540ecb3716c270f27bf9b9e795" >> REVISION as root@188.166.4.171
+ DEBUG [d2b0416a] Command: cd /var/www/html/releases/20170105105704 && /usr/bin/env echo "67f5d0dc48c1bd540ecb3716c270f27bf9b9e795" >> REVISION
+  INFO [d2b0416a] Finished in 0.397 seconds with exit status 0 (successful).
+  INFO [e776a713] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105105704/wp-content as root@188.166.4.171
+ DEBUG [e776a713] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105105704/wp-content
+  INFO [e776a713] Finished in 0.420 seconds with exit status 0 (successful).
+ DEBUG [82be8b37] Running [ -L /var/www/html/releases/20170105105704/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [82be8b37] Command: [ -L /var/www/html/releases/20170105105704/wp-content/uploads ]
+ DEBUG [82be8b37] Finished in 0.513 seconds with exit status 1 (failed).
+ DEBUG [51d7c150] Running [ -d /var/www/html/releases/20170105105704/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [51d7c150] Command: [ -d /var/www/html/releases/20170105105704/wp-content/uploads ]
+ DEBUG [51d7c150] Finished in 0.454 seconds with exit status 1 (failed).
+  INFO [a6cd67c8] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105105704/wp-content/uploads as root@188.166.4.171
+ DEBUG [a6cd67c8] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105105704/wp-content/uploads
+  INFO [a6cd67c8] Finished in 0.424 seconds with exit status 0 (successful).
+  INFO [664f7262] Running /usr/bin/env ln -s /var/www/html/releases/20170105105704 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [664f7262] Command: /usr/bin/env ln -s /var/www/html/releases/20170105105704 /var/www/html/releases/current
+  INFO [664f7262] Finished in 0.433 seconds with exit status 0 (successful).
+  INFO [e88e9a98] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [e88e9a98] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [e88e9a98] Finished in 0.461 seconds with exit status 0 (successful).
+ DEBUG [8624ddc6] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [8624ddc6] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [8624ddc6] 	20170104163159	20170105095803	20170105101931	20170105102221	20170105102718
+20170105105704
+ DEBUG [8624ddc6] Finished in 0.458 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 188.166.4.171
+  INFO [bfd6a92b] Running /usr/bin/env rm -rf /var/www/html/releases/20170104163159 as root@188.166.4.171
+ DEBUG [bfd6a92b] Command: /usr/bin/env rm -rf /var/www/html/releases/20170104163159
+  INFO [bfd6a92b] Finished in 1.145 seconds with exit status 0 (successful).
+ DEBUG [5d73a8fd] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [5d73a8fd] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [5d73a8fd] Finished in 0.331 seconds with exit status 0 (successful).
+  INFO [a332d876] Running /usr/bin/env echo "Branch master (at 67f5d0dc48c1bd540ecb3716c270f27bf9b9e795) deployed as release 20170105105704 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [a332d876] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at 67f5d0dc48c1bd540ecb3716c270f27bf9b9e795) deployed as release 20170105105704 by leeaplin" >> /var/www/html/revisions.log
+  INFO [a332d876] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:16:27 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [23c55663] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [23c55663] Command: /usr/bin/env mkdir -p /tmp
+  INFO [23c55663] Finished in 2.597 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [c8cd1c9b] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [c8cd1c9b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [c8cd1c9b] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [5618afe7] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [5618afe7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [5618afe7] 	146ca5d2a57a250c83cb3a50a28e3ff88695cea2	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [5618afe7] Finished in 0.895 seconds with exit status 0 (successful).
+  INFO [71e970cf] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [71e970cf] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [71e970cf] Finished in 0.427 seconds with exit status 0 (successful).
+  INFO [926ec76f] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [926ec76f] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [926ec76f] Finished in 0.499 seconds with exit status 0 (successful).
+ DEBUG [13e284c7] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [13e284c7] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [13e284c7] Finished in 0.524 seconds with exit status 0 (successful).
+ DEBUG [c3e56c4f] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [c3e56c4f] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [c3e56c4f] 	67f5d0dc48c1bd540ecb3716c270f27bf9b9e795
+ DEBUG [c3e56c4f] Finished in 0.598 seconds with exit status 0 (successful).
+ DEBUG [76ada72b] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [76ada72b] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [76ada72b] Finished in 0.611 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [f08a5e64] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [f08a5e64] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [f08a5e64] Finished in 0.420 seconds with exit status 0 (successful).
+  INFO [2a7d9290] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [2a7d9290] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [2a7d9290] 	Fetching origin
+ DEBUG [2a7d9290] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [2a7d9290] 	   67f5d0d..146ca5d  master     -> master
+  INFO [2a7d9290] Finished in 1.221 seconds with exit status 0 (successful).
+ DEBUG [1ff351f8] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [1ff351f8] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [1ff351f8] Finished in 0.437 seconds with exit status 0 (successful).
+  INFO [da0cdcfa] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105111638 as root@188.166.4.171
+ DEBUG [da0cdcfa] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105111638 )
+  INFO [da0cdcfa] Finished in 0.385 seconds with exit status 0 (successful).
+  INFO [26b556a7] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105111638 as root@188.166.4.171
+ DEBUG [26b556a7] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105111638 )
+  INFO [26b556a7] Finished in 1.310 seconds with exit status 0 (successful).
+ DEBUG [5d672d52] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [5d672d52] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [5d672d52] Finished in 0.424 seconds with exit status 0 (successful).
+ DEBUG [71198fef] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [71198fef] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [71198fef] 	146ca5d2a57a250c83cb3a50a28e3ff88695cea2
+ DEBUG [71198fef] Finished in 0.514 seconds with exit status 0 (successful).
+ DEBUG [ee1ce004] Running if test ! -d /var/www/html/releases/20170105111638; then echo "Directory does not exist '/var/www/html/releases/20170105111638'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [ee1ce004] Command: if test ! -d /var/www/html/releases/20170105111638; then echo "Directory does not exist '/var/www/html/releases/20170105111638'" 1>&2; false; fi
+ DEBUG [ee1ce004] Finished in 0.396 seconds with exit status 0 (successful).
+  INFO [20d83f9f] Running /usr/bin/env echo "146ca5d2a57a250c83cb3a50a28e3ff88695cea2" >> REVISION as root@188.166.4.171
+ DEBUG [20d83f9f] Command: cd /var/www/html/releases/20170105111638 && /usr/bin/env echo "146ca5d2a57a250c83cb3a50a28e3ff88695cea2" >> REVISION
+  INFO [20d83f9f] Finished in 0.521 seconds with exit status 0 (successful).
+  INFO [4a5c0d50] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105111638/wp-content as root@188.166.4.171
+ DEBUG [4a5c0d50] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105111638/wp-content
+  INFO [4a5c0d50] Finished in 0.512 seconds with exit status 0 (successful).
+ DEBUG [d50dc495] Running [ -L /var/www/html/releases/20170105111638/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [d50dc495] Command: [ -L /var/www/html/releases/20170105111638/wp-content/uploads ]
+ DEBUG [d50dc495] Finished in 0.615 seconds with exit status 1 (failed).
+ DEBUG [6ef94b41] Running [ -d /var/www/html/releases/20170105111638/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [6ef94b41] Command: [ -d /var/www/html/releases/20170105111638/wp-content/uploads ]
+ DEBUG [6ef94b41] Finished in 0.613 seconds with exit status 1 (failed).
+  INFO [212cd31a] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105111638/wp-content/uploads as root@188.166.4.171
+ DEBUG [212cd31a] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105111638/wp-content/uploads
+  INFO [212cd31a] Finished in 0.461 seconds with exit status 0 (successful).
+  INFO [f5c89afd] Running /usr/bin/env ln -s /var/www/html/releases/20170105111638 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [f5c89afd] Command: /usr/bin/env ln -s /var/www/html/releases/20170105111638 /var/www/html/releases/current
+  INFO [f5c89afd] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [3b744ed4] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [3b744ed4] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [3b744ed4] Finished in 0.362 seconds with exit status 0 (successful).
+ DEBUG [b3c21d98] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [b3c21d98] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [b3c21d98] 	20170105095803	20170105101931	20170105102221	20170105102718	20170105105704
+20170105111638
+ DEBUG [b3c21d98] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 188.166.4.171
+  INFO [5cf12e24] Running /usr/bin/env rm -rf /var/www/html/releases/20170105095803 as root@188.166.4.171
+ DEBUG [5cf12e24] Command: /usr/bin/env rm -rf /var/www/html/releases/20170105095803
+  INFO [5cf12e24] Finished in 0.618 seconds with exit status 0 (successful).
+ DEBUG [d12fb0cc] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [d12fb0cc] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [d12fb0cc] Finished in 0.473 seconds with exit status 0 (successful).
+  INFO [ea7ea4cc] Running /usr/bin/env echo "Branch master (at 146ca5d2a57a250c83cb3a50a28e3ff88695cea2) deployed as release 20170105111638 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [ea7ea4cc] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at 146ca5d2a57a250c83cb3a50a28e3ff88695cea2) deployed as release 20170105111638 by leeaplin" >> /var/www/html/revisions.log
+  INFO [ea7ea4cc] Finished in 0.408 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:25:17 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [70ebd9ae] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [70ebd9ae] Command: /usr/bin/env mkdir -p /tmp
+  INFO [70ebd9ae] Finished in 2.240 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [180e3456] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [180e3456] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [180e3456] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [e7cd1593] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [e7cd1593] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [e7cd1593] 	9868adc5070bc52a2c01b83c91923fee0c252ff4	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [e7cd1593] Finished in 0.757 seconds with exit status 0 (successful).
+  INFO [4e3a530a] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [4e3a530a] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [4e3a530a] Finished in 0.169 seconds with exit status 0 (successful).
+  INFO [a6bd7b81] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [a6bd7b81] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [a6bd7b81] Finished in 0.173 seconds with exit status 0 (successful).
+ DEBUG [7f3c51f5] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [7f3c51f5] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [7f3c51f5] Finished in 0.177 seconds with exit status 0 (successful).
+ DEBUG [52b446c0] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [52b446c0] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [52b446c0] 	146ca5d2a57a250c83cb3a50a28e3ff88695cea2
+ DEBUG [52b446c0] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [e79dfa4d] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [e79dfa4d] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [e79dfa4d] Finished in 0.177 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [c008e75f] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [c008e75f] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [c008e75f] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [e12e7235] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [e12e7235] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e12e7235] 	Fetching origin
+ DEBUG [e12e7235] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [e12e7235] 	   146ca5d..9868adc  master     -> master
+  INFO [e12e7235] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [d13197f8] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [d13197f8] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [d13197f8] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [3ad09ef8] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105112523 as root@188.166.4.171
+ DEBUG [3ad09ef8] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105112523 )
+  INFO [3ad09ef8] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [5eb79492] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105112523 as root@188.166.4.171
+ DEBUG [5eb79492] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105112523 )
+  INFO [5eb79492] Finished in 0.862 seconds with exit status 0 (successful).
+ DEBUG [c92768e1] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [c92768e1] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [c92768e1] Finished in 0.216 seconds with exit status 0 (successful).
+ DEBUG [c4ad090b] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [c4ad090b] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c4ad090b] 	9868adc5070bc52a2c01b83c91923fee0c252ff4
+ DEBUG [c4ad090b] Finished in 0.222 seconds with exit status 0 (successful).
+ DEBUG [dd744a12] Running if test ! -d /var/www/html/releases/20170105112523; then echo "Directory does not exist '/var/www/html/releases/20170105112523'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [dd744a12] Command: if test ! -d /var/www/html/releases/20170105112523; then echo "Directory does not exist '/var/www/html/releases/20170105112523'" 1>&2; false; fi
+ DEBUG [dd744a12] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [dfcb3e8c] Running /usr/bin/env echo "9868adc5070bc52a2c01b83c91923fee0c252ff4" >> REVISION as root@188.166.4.171
+ DEBUG [dfcb3e8c] Command: cd /var/www/html/releases/20170105112523 && /usr/bin/env echo "9868adc5070bc52a2c01b83c91923fee0c252ff4" >> REVISION
+  INFO [dfcb3e8c] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [509e9570] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105112523/wp-content as root@188.166.4.171
+ DEBUG [509e9570] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105112523/wp-content
+  INFO [509e9570] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [e1fd0fc4] Running [ -L /var/www/html/releases/20170105112523/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [e1fd0fc4] Command: [ -L /var/www/html/releases/20170105112523/wp-content/uploads ]
+ DEBUG [e1fd0fc4] Finished in 0.241 seconds with exit status 1 (failed).
+ DEBUG [2421963e] Running [ -d /var/www/html/releases/20170105112523/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [2421963e] Command: [ -d /var/www/html/releases/20170105112523/wp-content/uploads ]
+ DEBUG [2421963e] Finished in 0.234 seconds with exit status 1 (failed).
+  INFO [07510707] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105112523/wp-content/uploads as root@188.166.4.171
+ DEBUG [07510707] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105112523/wp-content/uploads
+  INFO [07510707] Finished in 0.206 seconds with exit status 0 (successful).
+  INFO [64946699] Running /usr/bin/env ln -s /var/www/html/releases/20170105112523 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [64946699] Command: /usr/bin/env ln -s /var/www/html/releases/20170105112523 /var/www/html/releases/current
+  INFO [64946699] Finished in 0.221 seconds with exit status 0 (successful).
+  INFO [a5ce116f] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [a5ce116f] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [a5ce116f] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [5aca934e] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [5aca934e] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [5aca934e] 	20170105101931	20170105102221	20170105102718	20170105111638	20170105105704
+20170105112523
+ DEBUG [5aca934e] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 188.166.4.171
+  INFO [cdcc4277] Running /usr/bin/env rm -rf /var/www/html/releases/20170105101931 as root@188.166.4.171
+ DEBUG [cdcc4277] Command: /usr/bin/env rm -rf /var/www/html/releases/20170105101931
+  INFO [cdcc4277] Finished in 0.281 seconds with exit status 0 (successful).
+ DEBUG [3fea0673] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [3fea0673] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [3fea0673] Finished in 0.215 seconds with exit status 0 (successful).
+  INFO [3bc2da24] Running /usr/bin/env echo "Branch master (at 9868adc5070bc52a2c01b83c91923fee0c252ff4) deployed as release 20170105112523 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [3bc2da24] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at 9868adc5070bc52a2c01b83c91923fee0c252ff4) deployed as release 20170105112523 by leeaplin" >> /var/www/html/revisions.log
+  INFO [3bc2da24] Finished in 0.253 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:29:53 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [79ec789f] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [79ec789f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [79ec789f] Finished in 3.700 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [826075ee] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [826075ee] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [826075ee] Finished in 0.327 seconds with exit status 0 (successful).
+  INFO [94b93f00] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [94b93f00] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [94b93f00] 	bd3c81b41001ca572767a72585809870ae494ddd	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [94b93f00] Finished in 0.953 seconds with exit status 0 (successful).
+  INFO [876c6227] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [876c6227] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [876c6227] Finished in 0.348 seconds with exit status 0 (successful).
+  INFO [9c04761b] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [9c04761b] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [9c04761b] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [6b51bad0] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [6b51bad0] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [6b51bad0] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [8fc46e93] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [8fc46e93] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [8fc46e93] 	9868adc5070bc52a2c01b83c91923fee0c252ff4
+ DEBUG [8fc46e93] Finished in 0.375 seconds with exit status 0 (successful).
+ DEBUG [bf06e0c3] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [bf06e0c3] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [bf06e0c3] Finished in 0.365 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [f78cd7ce] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [f78cd7ce] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [f78cd7ce] Finished in 0.378 seconds with exit status 0 (successful).
+  INFO [f3082bb2] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [f3082bb2] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f3082bb2] 	Fetching origin
+ DEBUG [f3082bb2] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [f3082bb2] 	   9868adc..bd3c81b  master     -> master
+  INFO [f3082bb2] Finished in 1.194 seconds with exit status 0 (successful).
+ DEBUG [50888236] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [50888236] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [50888236] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [a414dfdd] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105113003 as root@188.166.4.171
+ DEBUG [a414dfdd] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105113003 )
+  INFO [a414dfdd] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [584ee927] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105113003 as root@188.166.4.171
+ DEBUG [584ee927] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105113003 )
+  INFO [584ee927] Finished in 0.879 seconds with exit status 0 (successful).
+ DEBUG [7288fb69] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [7288fb69] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [7288fb69] Finished in 0.373 seconds with exit status 0 (successful).
+ DEBUG [d3e4a840] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [d3e4a840] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d3e4a840] 	bd3c81b41001ca572767a72585809870ae494ddd
+ DEBUG [d3e4a840] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG [baf65fbe] Running if test ! -d /var/www/html/releases/20170105113003; then echo "Directory does not exist '/var/www/html/releases/20170105113003'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [baf65fbe] Command: if test ! -d /var/www/html/releases/20170105113003; then echo "Directory does not exist '/var/www/html/releases/20170105113003'" 1>&2; false; fi
+ DEBUG [baf65fbe] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO [05bf8ace] Running /usr/bin/env echo "bd3c81b41001ca572767a72585809870ae494ddd" >> REVISION as root@188.166.4.171
+ DEBUG [05bf8ace] Command: cd /var/www/html/releases/20170105113003 && /usr/bin/env echo "bd3c81b41001ca572767a72585809870ae494ddd" >> REVISION
+  INFO [05bf8ace] Finished in 0.407 seconds with exit status 0 (successful).
+  INFO [1adee390] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105113003/wp-content as root@188.166.4.171
+ DEBUG [1adee390] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105113003/wp-content
+  INFO [1adee390] Finished in 0.410 seconds with exit status 0 (successful).
+ DEBUG [2fda926d] Running [ -L /var/www/html/releases/20170105113003/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [2fda926d] Command: [ -L /var/www/html/releases/20170105113003/wp-content/uploads ]
+ DEBUG [2fda926d] Finished in 0.453 seconds with exit status 1 (failed).
+ DEBUG [7d2b6b5a] Running [ -d /var/www/html/releases/20170105113003/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [7d2b6b5a] Command: [ -d /var/www/html/releases/20170105113003/wp-content/uploads ]
+ DEBUG [7d2b6b5a] Finished in 0.491 seconds with exit status 1 (failed).
+  INFO [798bca6c] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105113003/wp-content/uploads as root@188.166.4.171
+ DEBUG [798bca6c] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105113003/wp-content/uploads
+  INFO [798bca6c] Finished in 0.528 seconds with exit status 0 (successful).
+  INFO [d9c445a0] Running /usr/bin/env ln -s /var/www/html/releases/20170105113003 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [d9c445a0] Command: /usr/bin/env ln -s /var/www/html/releases/20170105113003 /var/www/html/releases/current
+  INFO [d9c445a0] Finished in 1.095 seconds with exit status 0 (successful).
+  INFO [7fcfd42b] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [7fcfd42b] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [7fcfd42b] Finished in 0.596 seconds with exit status 0 (successful).
+ DEBUG [ced5e1fe] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [ced5e1fe] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [ced5e1fe] 	20170105102221	20170105102718	20170105111638	20170105105704	20170105112523
+20170105113003
+ DEBUG [ced5e1fe] Finished in 1.688 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 188.166.4.171
+  INFO [a47ecea7] Running /usr/bin/env rm -rf /var/www/html/releases/20170105102221 as root@188.166.4.171
+ DEBUG [a47ecea7] Command: /usr/bin/env rm -rf /var/www/html/releases/20170105102221
+  INFO [a47ecea7] Finished in 0.461 seconds with exit status 0 (successful).
+ DEBUG [f24377d3] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [f24377d3] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [f24377d3] Finished in 0.438 seconds with exit status 0 (successful).
+  INFO [61ceb442] Running /usr/bin/env echo "Branch master (at bd3c81b41001ca572767a72585809870ae494ddd) deployed as release 20170105113003 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [61ceb442] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at bd3c81b41001ca572767a72585809870ae494ddd) deployed as release 20170105113003 by leeaplin" >> /var/www/html/revisions.log
+  INFO [61ceb442] Finished in 0.467 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:38:31 +0000 cap live deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [552b6933] Running /usr/bin/env mkdir -p /tmp as root@188.166.4.171
+ DEBUG [552b6933] Command: /usr/bin/env mkdir -p /tmp
+  INFO [552b6933] Finished in 3.601 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ammba-live-leeaplin.sh 100.0%
+  INFO [39286dc1] Running /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh as root@188.166.4.171
+ DEBUG [39286dc1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ammba-live-leeaplin.sh
+  INFO [39286dc1] Finished in 0.410 seconds with exit status 0 (successful).
+  INFO [a0d99c9d] Running /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git as root@188.166.4.171
+ DEBUG [a0d99c9d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git ls-remote --heads https://health-robot:drMG284um9ycSMER@git.substrakt.com/client-work/ammba-new.git )
+ DEBUG [a0d99c9d] 	d34f2f2ec43108785a5f302cac92832b3f8289d7	refs/heads/master
+9dade59bce4de93b29884d84a8a90c2ec2929cb5	refs/heads/newrepo
+  INFO [a0d99c9d] Finished in 1.123 seconds with exit status 0 (successful).
+  INFO [4ffef21e] Running /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases as root@188.166.4.171
+ DEBUG [4ffef21e] Command: /usr/bin/env mkdir -p /var/www/html/shared /var/www/html/releases
+  INFO [4ffef21e] Finished in 0.472 seconds with exit status 0 (successful).
+  INFO [c0229f2f] Running /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads as root@188.166.4.171
+ DEBUG [c0229f2f] Command: /usr/bin/env mkdir -p /var/www/html/shared/wp-content/uploads
+  INFO [c0229f2f] Finished in 0.313 seconds with exit status 0 (successful).
+ DEBUG [ecbb9f82] Running [ -f /var/www/html/current/REVISION ] as root@188.166.4.171
+ DEBUG [ecbb9f82] Command: [ -f /var/www/html/current/REVISION ]
+ DEBUG [ecbb9f82] Finished in 0.313 seconds with exit status 0 (successful).
+ DEBUG [42b9ac09] Running /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null as root@188.166.4.171
+ DEBUG [42b9ac09] Command: /usr/bin/env cat /var/www/html/current/REVISION 2>/dev/null
+ DEBUG [42b9ac09] 	bd3c81b41001ca572767a72585809870ae494ddd
+ DEBUG [42b9ac09] Finished in 0.320 seconds with exit status 0 (successful).
+ DEBUG [4b221775] Running [ -f /var/www/html/repo/HEAD ] as root@188.166.4.171
+ DEBUG [4b221775] Command: [ -f /var/www/html/repo/HEAD ]
+ DEBUG [4b221775] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/repo
+ DEBUG [c72e3036] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [c72e3036] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [c72e3036] Finished in 0.314 seconds with exit status 0 (successful).
+  INFO [8d3fe418] Running /usr/bin/env git remote update --prune as root@188.166.4.171
+ DEBUG [8d3fe418] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8d3fe418] 	Fetching origin
+ DEBUG [8d3fe418] 	From https://git.substrakt.com/client-work/ammba-new
+ DEBUG [8d3fe418] 	   bd3c81b..d34f2f2  master     -> master
+  INFO [8d3fe418] Finished in 1.330 seconds with exit status 0 (successful).
+ DEBUG [77df2c87] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [77df2c87] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [77df2c87] Finished in 0.329 seconds with exit status 0 (successful).
+  INFO [92a6e673] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105113840 as root@188.166.4.171
+ DEBUG [92a6e673] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env mkdir -p /var/www/html/releases/20170105113840 )
+  INFO [92a6e673] Finished in 0.350 seconds with exit status 0 (successful).
+  INFO [4868cd20] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105113840 as root@188.166.4.171
+ DEBUG [4868cd20] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/html/releases/20170105113840 )
+  INFO [4868cd20] Finished in 1.263 seconds with exit status 0 (successful).
+ DEBUG [2d2a1fce] Running if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [2d2a1fce] Command: if test ! -d /var/www/html/repo; then echo "Directory does not exist '/var/www/html/repo'" 1>&2; false; fi
+ DEBUG [2d2a1fce] Finished in 0.409 seconds with exit status 0 (successful).
+ DEBUG [bc7f1202] Running /usr/bin/env git rev-list --max-count=1 master as root@188.166.4.171
+ DEBUG [bc7f1202] Command: cd /var/www/html/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ammba-live-leeaplin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bc7f1202] 	d34f2f2ec43108785a5f302cac92832b3f8289d7
+ DEBUG [bc7f1202] Finished in 0.434 seconds with exit status 0 (successful).
+ DEBUG [677beae4] Running if test ! -d /var/www/html/releases/20170105113840; then echo "Directory does not exist '/var/www/html/releases/20170105113840'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [677beae4] Command: if test ! -d /var/www/html/releases/20170105113840; then echo "Directory does not exist '/var/www/html/releases/20170105113840'" 1>&2; false; fi
+ DEBUG [677beae4] Finished in 0.589 seconds with exit status 0 (successful).
+  INFO [c2749ab2] Running /usr/bin/env echo "d34f2f2ec43108785a5f302cac92832b3f8289d7" >> REVISION as root@188.166.4.171
+ DEBUG [c2749ab2] Command: cd /var/www/html/releases/20170105113840 && /usr/bin/env echo "d34f2f2ec43108785a5f302cac92832b3f8289d7" >> REVISION
+  INFO [c2749ab2] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [73ee7f81] Running /usr/bin/env mkdir -p /var/www/html/releases/20170105113840/wp-content as root@188.166.4.171
+ DEBUG [73ee7f81] Command: /usr/bin/env mkdir -p /var/www/html/releases/20170105113840/wp-content
+  INFO [73ee7f81] Finished in 0.614 seconds with exit status 0 (successful).
+ DEBUG [2cb2b9d1] Running [ -L /var/www/html/releases/20170105113840/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [2cb2b9d1] Command: [ -L /var/www/html/releases/20170105113840/wp-content/uploads ]
+ DEBUG [2cb2b9d1] Finished in 2.048 seconds with exit status 1 (failed).
+ DEBUG [c7d1a8b8] Running [ -d /var/www/html/releases/20170105113840/wp-content/uploads ] as root@188.166.4.171
+ DEBUG [c7d1a8b8] Command: [ -d /var/www/html/releases/20170105113840/wp-content/uploads ]
+ DEBUG [c7d1a8b8] Finished in 0.614 seconds with exit status 1 (failed).
+  INFO [5bd2c8b1] Running /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105113840/wp-content/uploads as root@188.166.4.171
+ DEBUG [5bd2c8b1] Command: /usr/bin/env ln -s /var/www/html/shared/wp-content/uploads /var/www/html/releases/20170105113840/wp-content/uploads
+  INFO [5bd2c8b1] Finished in 0.522 seconds with exit status 0 (successful).
+  INFO [9d8079dd] Running /usr/bin/env ln -s /var/www/html/releases/20170105113840 /var/www/html/releases/current as root@188.166.4.171
+ DEBUG [9d8079dd] Command: /usr/bin/env ln -s /var/www/html/releases/20170105113840 /var/www/html/releases/current
+  INFO [9d8079dd] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [15d532a9] Running /usr/bin/env mv /var/www/html/releases/current /var/www/html as root@188.166.4.171
+ DEBUG [15d532a9] Command: /usr/bin/env mv /var/www/html/releases/current /var/www/html
+  INFO [15d532a9] Finished in 0.412 seconds with exit status 0 (successful).
+ DEBUG [6e1e0940] Running /usr/bin/env ls -xtr /var/www/html/releases as root@188.166.4.171
+ DEBUG [6e1e0940] Command: /usr/bin/env ls -xtr /var/www/html/releases
+ DEBUG [6e1e0940] 	20170105102718	20170105111638	20170105105704	20170105112523	20170105113003
+20170105113840
+ DEBUG [6e1e0940] Finished in 0.421 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 188.166.4.171
+  INFO [86612e6c] Running /usr/bin/env rm -rf /var/www/html/releases/20170105102718 as root@188.166.4.171
+ DEBUG [86612e6c] Command: /usr/bin/env rm -rf /var/www/html/releases/20170105102718
+  INFO [86612e6c] Finished in 0.438 seconds with exit status 0 (successful).
+ DEBUG [1b5391f7] Running if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi as root@188.166.4.171
+ DEBUG [1b5391f7] Command: if test ! -d /var/www/html/releases; then echo "Directory does not exist '/var/www/html/releases'" 1>&2; false; fi
+ DEBUG [1b5391f7] Finished in 0.324 seconds with exit status 0 (successful).
+  INFO [22a68e9b] Running /usr/bin/env echo "Branch master (at d34f2f2ec43108785a5f302cac92832b3f8289d7) deployed as release 20170105113840 by leeaplin" >> /var/www/html/revisions.log as root@188.166.4.171
+ DEBUG [22a68e9b] Command: cd /var/www/html/releases && /usr/bin/env echo "Branch master (at d34f2f2ec43108785a5f302cac92832b3f8289d7) deployed as release 20170105113840 by leeaplin" >> /var/www/html/revisions.log
+  INFO [22a68e9b] Finished in 0.334 seconds with exit status 0 (successful).

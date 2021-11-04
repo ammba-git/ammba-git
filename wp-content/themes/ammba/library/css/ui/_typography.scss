@@ -1,0 +1,312 @@
+/*------------------------------------*\
+    Typography
+\*------------------------------------*/
+
+
+/*
+** Font Face
+*/
+
+
+.ff-bold, .ff-reg, .ff-light, .ff-thin {
+    font-family:'brandon-grotesque', Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+.ff-bold {
+    font-weight: 700;
+}
+.ff-reg {
+    font-weight: 400;
+}
+.ff-italic {
+	font-style: italic;
+}
+.ff-light{
+    font-weight: 300;
+}
+.ff-thin {
+    font-weight: 100;
+}
+
+
+/*
+** Primary
+*/
+
+
+html, body {
+    font-size: 16px;
+    font-size: 1rem;
+    @extend .ff-reg;
+    color: $black-60;
+    line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .ff-bold;
+    text-transform: uppercase;
+    color: $primary;
+    line-height: 1.25em;
+    a {
+        text-decoration: none;
+    }
+    &.title-rule {
+        margin: 10px 0 40px;
+        text-align: center;
+        &.left {
+            text-align: left;
+        }
+        &:after {
+            content: '';
+            display: block;
+            text-align: center;
+            width: 30px; height: 2px;
+            margin: 20px auto;
+        }
+        &.purple:after {
+            background: $primary;
+        }
+        &.white:after {
+            background: $white;
+        }
+        &.grey:after {
+            background: $tertiary;
+        }
+    }
+}
+
+h1 {
+	font-size: 3.125rem;
+}
+
+h2 {
+	font-size: 1.875rem;
+}
+
+h3 {
+    font-size: 1.625rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+a {
+    color: $black-60;
+    @include ease;
+    &:hover {
+        color: $black-80;
+    }
+    &:active {
+        position: relative;
+        top: 1px;
+    }
+}
+
+a, :-moz-any-link:focus { outline: none;}
+
+blockquote {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    quotes: inherit;
+}
+
+
+/*
+** Secondary
+*/
+
+.intro {
+    @extend .ff-reg;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin: 0 0 2rem 0;
+    p {
+        @extend .ff-reg;
+    }
+}
+
+.intro-upper {
+    @extend .intro;
+    text-transform: uppercase;
+}
+
+.note {
+    @extend.ff-bold;
+    font-size: 0.75rem;
+}
+
+.ref {
+    @extend .note;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $black-80;
+}
+
+.large {
+    font-size: 1.625rem;
+}
+
+.massive {
+    font-size: 3.125rem;
+}
+
+.more-link {
+    @extend .ff-bold;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    i {
+        margin-left: 6px;
+    }
+    &.back i {
+        margin-left: 0;
+        margin-right: 6px;
+    }
+}
+
+.page-links {
+    $dim: 60px;
+    @extend .clear-list;
+    text-align: center;
+    margin-bottom: 20px;
+    li {
+        margin: 0 1px;
+        color: $white;
+        font-weight: bold;
+        a, strong {
+            width: $dim; height: $dim;
+            line-height: $dim;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            border: 1px solid $black-30;
+            color: $black-30;
+            @include rounded($dim);
+            &:hover {
+                border: 1px solid $black-60;
+                color: $black-60;
+                text-decoration: none;
+            }
+        }
+        strong, strong:hover {
+            border: 1px solid $primary;
+            color: $primary;
+        }
+    }
+    .last {
+        margin-right: 0;
+    }
+}
+
+.info-ref {
+    text-align: right;
+    @extend .ff-bold;
+    line-height: 1rem;
+    color: lighten($tertiary, 40%);
+    span {
+        float: left;
+        text-align: left;
+        color: $primary;
+        text-transform: uppercase;
+    }
+    em {
+        display: inline-block;
+        width: 75%;
+        font-style: normal;
+    }
+}
+
+.credit {
+    color: $primary;
+    @extend .ff-bold;
+}
+
+
+
+
+
+/**********************************************************************************************************************************************************
+***  Palm
+**********************************************************************************************************************************************************/
+
+@include media-query(palm) {
+
+
+
+}/* End Palm */
+
+
+/**********************************************************************************************************************************************************
+***  Lap and up
+**********************************************************************************************************************************************************/
+
+
+@include media-query(lap-and-up) {
+
+    html, body {
+        font-size: 1.063rem;
+        line-height: 1.88rem;
+    }
+
+    .static-font {
+        font-size: 0.941rem;
+    }
+
+
+
+}/* End Lap & Up */
+
+
+/**********************************************************************************************************************************************************
+***  Lap
+**********************************************************************************************************************************************************/
+
+
+@include media-query(lap) {
+
+}/* End Lap */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk
+**********************************************************************************************************************************************************/
+
+@include media-query(desk) {
+
+
+
+}/* End Desk */
+
+
+
+/**********************************************************************************************************************************************************
+***  Desk Wide
+**********************************************************************************************************************************************************/
+
+@include media-query(desk-wide) {
+
+    html, body {
+        font-size: 1.125rem;
+        line-height: 2.13rem;
+    }
+
+    .static-font {
+        font-size: 0.889rem;
+    }
+
+    .intro {
+        font-size: 1.5rem;
+        line-height: 2.75rem;
+    }
+
+}/* End Desk */
+
+
+
